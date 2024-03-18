@@ -5,10 +5,13 @@
   "scripts": {
     "start": "bun src/index.ts"
   },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/polka": "^0.5.7",
+    "body-parser": "^1.20.2",
+    "mailparser": "^3.6.9",
+    "polka": "^0.5.2"
   }
 }
