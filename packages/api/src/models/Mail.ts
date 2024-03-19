@@ -2,7 +2,7 @@ import type { ParsedMail } from "mailparser";
 import { randomUUID } from "node:crypto";
 import normalize from "normalize-email";
 
-export class Mail {
+export default class Mail {
 	id: string;
 	senders: { name: string, address: string }[];
 	recipients: { address: string }[];
@@ -17,7 +17,7 @@ export class Mail {
 
 		this.body = parsedMail.html
 			? parsedMail.html
-			: parsedMail.textAsHtml ?? parsedMail.text ?? ""
+			: parsedMail.textAsHtml ?? parsedMail.text ?? "";
 
 		const senders = parsedMail.from?.value ?? [];
 		this.senders = senders.map(sender => ({

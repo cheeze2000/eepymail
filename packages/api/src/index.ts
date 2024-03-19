@@ -2,6 +2,7 @@ import type { ParsedMail } from "mailparser";
 import { json } from "body-parser";
 import polka from "polka";
 
+import Mail from "~/models/Mail";
 import Socket from "~/socket";
 
 new Socket().start();
