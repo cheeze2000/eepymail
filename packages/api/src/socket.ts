@@ -4,7 +4,7 @@ import normalize from "normalize-email";
 import type Message from "~/models/Message";
 
 export default class {
-	server: WebSocketServer;
+	server!: WebSocketServer;
 
 	start() {
 		this.server = new WebSocketServer({ port: 9001 });

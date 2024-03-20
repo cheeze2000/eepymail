@@ -14,5 +14,11 @@
     "normalize-email": "^1.1.1",
     "polka": "^0.5.2",
     "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/mailparser": "^3.4.4",
+    "@types/polka": "^0.5.7",
+    "@types/ws": "^8.5.10"
   }
 }
