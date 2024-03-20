@@ -5,7 +5,8 @@ import polka from "polka";
 import Mail from "~/models/Mail";
 import Socket from "~/socket";
 
-new Socket().start();
+const socket = new Socket();
+socket.start();
 
 polka()
 	.use(json())

@@ -1,7 +1,12 @@
-import { WebSocket, WebSocketServer } from "ws";
+import { WebSocket as WS, WebSocketServer } from "ws";
+import { randomUUID } from "node:crypto";
 import normalize from "normalize-email";
 
 import type Message from "~/models/Message";
+
+interface WebSocket extends WS {
+	id: string;
+}
 
 export default class {
 	server!: WebSocketServer;
@@ -28,6 +33,7 @@ export default class {
 	}
 
 	private greet(ws: WebSocket) {
+		ws.id = randomUUID();
 		ws.send("connection established");
 	}
 
