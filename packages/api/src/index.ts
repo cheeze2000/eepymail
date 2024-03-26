@@ -14,7 +14,7 @@ polka()
 		const body: ParsedMail = req.body;
 		const mail = new Mail(body);
 
-		console.log(JSON.stringify(mail));
+		socket.alertSubscribers(mail);
 
 		res.end();
 	})
