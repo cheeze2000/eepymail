@@ -1,6 +1,7 @@
 import type { ParsedMail } from "mailparser";
 import { randomUUID } from "node:crypto";
 import normalize from "normalize-email";
+import DOMPurify from "isomorphic-dompurify";
 
 export default class Mail {
 	id: string;
@@ -18,6 +19,8 @@ export default class Mail {
 		this.body = parsedMail.html
 			? parsedMail.html
 			: parsedMail.textAsHtml ?? parsedMail.text ?? "";
+
+		this.body = DOMPurify.sanitize(this.body);
 
 		const senders = parsedMail.from?.value ?? [];
 		this.senders = senders.map(sender => ({
