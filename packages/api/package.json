@@ -3,7 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun src/index.ts"
+    "start": "bun src/index.ts",
+    "up": "docker compose up --build",
+    "down": "docker compose down"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
