@@ -10,6 +10,9 @@ socket.start();
 
 polka()
 	.use(json())
+	.get("/", (_, res) => {
+		res.end();
+	})
 	.post("/mail", (req, res) => {
 		const body: ParsedMail = req.body;
 		const mail = new Mail(body);
